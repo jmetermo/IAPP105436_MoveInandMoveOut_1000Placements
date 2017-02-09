@@ -1,0 +1,2 @@
+all,alwaysApplied,onMediaPlan,thirdpartyAdServer,entity,groupid,canChangeAdserver,status,packageType,placementType,plannedCost,rate,rateValue,section,commissionable,site,unitAmount,unitType,activeEndDate,activeStartDate,Display,mediaCode
+true,true,true,true,placement,buyDetail,true,false,Package,Display,100000.00,10000.0000,10000.0000,ABCD,true,GOOGLE.COM,10000,Impressions,2015-12-31,2015-01-01,Display,I

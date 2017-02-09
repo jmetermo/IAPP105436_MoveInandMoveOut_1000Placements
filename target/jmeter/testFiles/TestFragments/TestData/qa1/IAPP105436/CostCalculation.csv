@@ -1,0 +1,2 @@
+plcmtPkg,plcmntId,costMethod,fieldToCalc,plannedCost,rate,unitType,units
+true,0,CPM,plannedCost,1000,Impressions,1000

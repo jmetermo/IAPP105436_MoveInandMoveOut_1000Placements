@@ -1,0 +1,2 @@
+all,idOn,value,alwaysApplied,id,dir,idSupplier,entity,actionType,mode,actionTypeSave
+true,onMediaPlan,true,true,buyDetail,asc,supplierSite,Placement,validate,Package,save

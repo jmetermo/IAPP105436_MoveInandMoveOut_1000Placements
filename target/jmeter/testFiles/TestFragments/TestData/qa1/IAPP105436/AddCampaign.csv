@@ -1,0 +1,2 @@
+id,version,startDate,endDate,budget,ClientName,clientCode,mediaName,ProductName,estimateName,buyType,ReferenceId,campaigntype,providerInstanceId,providerLandingPage,bk1,bk2,bk3,productCode,ck1,esn,buyTypeId,currency,agencyMediaId,action,status,idNum,rowNum,mediumId,agencyMedia,productId,estimateId,clientId,isBudgetApproved
+0,0,2017-01-01,2017-12-31,9999999,AUTO-CLIENT-2,002,Interactive,AUTO-PD-1,EST1-JAN1-DEC31-2017 - TEST,Display,23456,Even,3813,www.google.com,USSJI002,USSJI002001,USSJI002001007,001,USSJI002,007,1,USD,1,ADD,false,0,0,1,1,1861440446,4681740009,54236687,true

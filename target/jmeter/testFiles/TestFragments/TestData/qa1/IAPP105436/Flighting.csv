@@ -1,0 +1,2 @@
+distribution,flightEnd,flightStart,placementPkg,ids,costMethod,currencyType,fieldToCalc,plannedCost,rate,unitType,units
+Weighted,2017-12-31,2017-01-01,true,-1,CPM,USD,plannedCost,0,0,Impressions,0
