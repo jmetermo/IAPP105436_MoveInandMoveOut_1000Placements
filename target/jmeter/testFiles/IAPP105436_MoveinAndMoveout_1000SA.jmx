@@ -11,77 +11,6 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
-        <collectionProp name="CookieManager.cookies">
-          <elementProp name="LKC" elementType="Cookie" testname="LKC">
-            <stringProp name="Cookie.value">22</stringProp>
-            <stringProp name="Cookie.domain">.${server}</stringProp>
-            <stringProp name="Cookie.path">/</stringProp>
-            <boolProp name="Cookie.secure">false</boolProp>
-            <longProp name="Cookie.expires">0</longProp>
-            <boolProp name="Cookie.path_specified">true</boolProp>
-            <boolProp name="Cookie.domain_specified">true</boolProp>
-          </elementProp>
-          <elementProp name="LKCD" elementType="Cookie" testname="LKCD">
-            <stringProp name="Cookie.value">ltr</stringProp>
-            <stringProp name="Cookie.domain">.${server}</stringProp>
-            <stringProp name="Cookie.path">/</stringProp>
-            <boolProp name="Cookie.secure">false</boolProp>
-            <longProp name="Cookie.expires">0</longProp>
-            <boolProp name="Cookie.path_specified">true</boolProp>
-            <boolProp name="Cookie.domain_specified">true</boolProp>
-          </elementProp>
-          <elementProp name="osv-user-org-continent" elementType="Cookie" testname="osv-user-org-continent">
-            <stringProp name="Cookie.value">NA</stringProp>
-            <stringProp name="Cookie.domain">.${server}</stringProp>
-            <stringProp name="Cookie.path">/</stringProp>
-            <boolProp name="Cookie.secure">false</boolProp>
-            <longProp name="Cookie.expires">0</longProp>
-            <boolProp name="Cookie.path_specified">true</boolProp>
-            <boolProp name="Cookie.domain_specified">true</boolProp>
-          </elementProp>
-          <elementProp name="osv-user-remember" elementType="Cookie" testname="osv-user-remember">
-            <stringProp name="Cookie.value">true</stringProp>
-            <stringProp name="Cookie.domain">.${server}</stringProp>
-            <stringProp name="Cookie.path">/</stringProp>
-            <boolProp name="Cookie.secure">false</boolProp>
-            <longProp name="Cookie.expires">0</longProp>
-            <boolProp name="Cookie.path_specified">true</boolProp>
-            <boolProp name="Cookie.domain_specified">true</boolProp>
-          </elementProp>
-          <elementProp name="STGT" elementType="Cookie" testname="STGT">
-            <stringProp name="Cookie.value">true</stringProp>
-            <stringProp name="Cookie.domain">.${server}</stringProp>
-            <stringProp name="Cookie.path">/</stringProp>
-            <boolProp name="Cookie.secure">false</boolProp>
-            <longProp name="Cookie.expires">0</longProp>
-            <boolProp name="Cookie.path_specified">true</boolProp>
-            <boolProp name="Cookie.domain_specified">true</boolProp>
-          </elementProp>
-          <elementProp name="LOGTKT" elementType="Cookie" testname="LOGTKT">
-            <stringProp name="Cookie.value">${__property(castgc)}</stringProp>
-            <stringProp name="Cookie.domain">.${server}</stringProp>
-            <stringProp name="Cookie.path">/</stringProp>
-            <boolProp name="Cookie.secure">false</boolProp>
-            <longProp name="Cookie.expires">0</longProp>
-            <boolProp name="Cookie.path_specified">true</boolProp>
-            <boolProp name="Cookie.domain_specified">true</boolProp>
-          </elementProp>
-          <elementProp name="_mkto_trk" elementType="Cookie" testname="_mkto_trk">
-            <stringProp name="Cookie.value">id:836-IRH-000&amp;token:_mch-mediaocean.com-1413201593913-97169</stringProp>
-            <stringProp name="Cookie.domain">.${server}</stringProp>
-            <stringProp name="Cookie.path">/</stringProp>
-            <boolProp name="Cookie.secure">false</boolProp>
-            <longProp name="Cookie.expires">0</longProp>
-            <boolProp name="Cookie.path_specified">true</boolProp>
-            <boolProp name="Cookie.domain_specified">true</boolProp>
-          </elementProp>
-        </collectionProp>
-        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
-        <stringProp name="CookieManager.policy">default</stringProp>
-        <stringProp name="CookieManager.implementation">org.apache.jmeter.protocol.http.control.HC4CookieHandler</stringProp>
-      </CookieManager>
-      <hashTree/>
       <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
         <boolProp name="clearEachIteration">true</boolProp>
         <boolProp name="useExpires">false</boolProp>
@@ -240,12 +169,13 @@
         <hashTree/>
         <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
           <collectionProp name="CookieManager.cookies"/>
-          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+          <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+          <stringProp name="CookieManager.policy">default</stringProp>
         </CookieManager>
         <hashTree/>
         <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager" enabled="true">
-          <boolProp name="clearEachIteration">false</boolProp>
-          <boolProp name="useExpires">false</boolProp>
+          <boolProp name="clearEachIteration">true</boolProp>
+          <boolProp name="useExpires">true</boolProp>
         </CacheManager>
         <hashTree/>
         <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Include Controller" enabled="true">
