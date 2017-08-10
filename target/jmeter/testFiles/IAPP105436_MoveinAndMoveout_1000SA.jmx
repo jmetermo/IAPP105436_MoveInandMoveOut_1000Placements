@@ -131,7 +131,7 @@
           </elementProp>
           <elementProp name="MOVIN_JSON" elementType="Argument">
             <stringProp name="Argument.name">MOVIN_JSON</stringProp>
-            <stringProp name="Argument.value">${__FileToString(${__P(includecontroller.prefix)}/TestData/${__P(env_name)}/${__P(key_value)}/movin.json,UTF-8)})}</stringProp>
+            <stringProp name="Argument.value">${__FileToString(${__P(includecontroller.prefix)}/TestFragments/TestData/${__P(env_name)}/${__P(key_value)}/movin.json,UTF-8)})}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="grid" elementType="Argument">
