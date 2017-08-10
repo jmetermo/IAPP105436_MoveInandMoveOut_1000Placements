@@ -676,7 +676,7 @@
             </RegexExtractor>
             <hashTree/>
             <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
-              <stringProp name="filename">${__P(includecontroller.prefix)}/TestData/${__P(env_name)}/${key}/AddCampaign.csv</stringProp>
+              <stringProp name="filename">${__P(includecontroller.prefix)}/TestFragments/TestData/${__P(env_name)}/${key}/AddCampaign.csv</stringProp>
               <stringProp name="fileEncoding"></stringProp>
               <stringProp name="variableNames"></stringProp>
               <stringProp name="delimiter">,</stringProp>

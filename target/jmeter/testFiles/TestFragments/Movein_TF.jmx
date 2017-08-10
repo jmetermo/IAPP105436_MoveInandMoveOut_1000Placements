@@ -41,7 +41,7 @@
         </HTTPSamplerProxy>
         <hashTree>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
-            <stringProp name="filename">${__P(includecontroller.prefix)}/TestData/${__P(env_name)}/${key}/BuyDetail.csv</stringProp>
+            <stringProp name="filename">${__P(includecontroller.prefix)}/TestFragments/TestData/${__P(env_name)}/${key}/BuyDetail.csv</stringProp>
             <stringProp name="fileEncoding"></stringProp>
             <stringProp name="variableNames"></stringProp>
             <stringProp name="delimiter">,</stringProp>
@@ -305,7 +305,7 @@
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
             <stringProp name="delimiter">,</stringProp>
             <stringProp name="fileEncoding"></stringProp>
-            <stringProp name="filename">${__P(includecontroller.prefix)}/TestData/${__P(env_name)}/${key}/Flighting.csv</stringProp>
+            <stringProp name="filename">${__P(includecontroller.prefix)}/TestFragments/TestData/${__P(env_name)}/${key}/Flighting.csv</stringProp>
             <boolProp name="quotedData">false</boolProp>
             <boolProp name="recycle">true</boolProp>
             <stringProp name="shareMode">shareMode.all</stringProp>
@@ -386,7 +386,7 @@
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
             <stringProp name="delimiter">,</stringProp>
             <stringProp name="fileEncoding"></stringProp>
-            <stringProp name="filename">${__P(includecontroller.prefix)}/TestData/${__P(env_name)}/${key}/Flighting.csv</stringProp>
+            <stringProp name="filename">${__P(includecontroller.prefix)}/TestFragments/TestData/${__P(env_name)}/${key}/Flighting.csv</stringProp>
             <boolProp name="quotedData">false</boolProp>
             <boolProp name="recycle">true</boolProp>
             <stringProp name="shareMode">shareMode.all</stringProp>
@@ -458,7 +458,7 @@
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
             <stringProp name="delimiter">,</stringProp>
             <stringProp name="fileEncoding"></stringProp>
-            <stringProp name="filename">${__P(includecontroller.prefix)}/TestData/${__P(env_name)}/${key}/Flighting.csv</stringProp>
+            <stringProp name="filename">${__P(includecontroller.prefix)}/TestFragments/TestData/${__P(env_name)}/${key}/Flighting.csv</stringProp>
             <boolProp name="quotedData">false</boolProp>
             <boolProp name="recycle">true</boolProp>
             <stringProp name="shareMode">shareMode.all</stringProp>
@@ -790,7 +790,7 @@
           </HeaderManager>
           <hashTree/>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
-            <stringProp name="filename">${__P(includecontroller.prefix)}/TestData/${__P(env_name)}/${key}/CostCalculation.csv</stringProp>
+            <stringProp name="filename">${__P(includecontroller.prefix)}/TestFragments/TestData/${__P(env_name)}/${key}/CostCalculation.csv</stringProp>
             <stringProp name="fileEncoding"></stringProp>
             <stringProp name="variableNames"></stringProp>
             <stringProp name="delimiter">,</stringProp>
@@ -871,7 +871,7 @@
           </HeaderManager>
           <hashTree/>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
-            <stringProp name="filename">${__P(includecontroller.prefix)}/TestData/${__P(env_name)}/${key}/Flight.csv</stringProp>
+            <stringProp name="filename">${__P(includecontroller.prefix)}/TestFragments/TestData/${__P(env_name)}/${key}/Flight.csv</stringProp>
             <stringProp name="fileEncoding"></stringProp>
             <stringProp name="variableNames"></stringProp>
             <stringProp name="delimiter">,</stringProp>
@@ -943,7 +943,7 @@
           </HeaderManager>
           <hashTree/>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
-            <stringProp name="filename">${__P(includecontroller.prefix)}/TestData/${__P(env_name)}/${key}/Flight.csv</stringProp>
+            <stringProp name="filename">${__P(includecontroller.prefix)}/TestFragments/TestData/${__P(env_name)}/${key}/Flight.csv</stringProp>
             <stringProp name="fileEncoding"></stringProp>
             <stringProp name="variableNames"></stringProp>
             <stringProp name="delimiter">,</stringProp>
@@ -1168,7 +1168,7 @@
           </HeaderManager>
           <hashTree/>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
-            <stringProp name="filename">${__P(includecontroller.prefix)}/TestData/${__P(env_name)}/${key}/MoveIn.csv</stringProp>
+            <stringProp name="filename">${__P(includecontroller.prefix)}/TestFragments/TestData/${__P(env_name)}/${key}/MoveIn.csv</stringProp>
             <stringProp name="fileEncoding"></stringProp>
             <stringProp name="variableNames"></stringProp>
             <stringProp name="delimiter">,</stringProp>
@@ -1241,7 +1241,7 @@
           </HeaderManager>
           <hashTree/>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
-            <stringProp name="filename">${__P(includecontroller.prefix)}/TestData/${__P(env_name)}/${key}/MoveIn.csv</stringProp>
+            <stringProp name="filename">${__P(includecontroller.prefix)}/TestFragments/TestData/${__P(env_name)}/${key}/MoveIn.csv</stringProp>
             <stringProp name="fileEncoding"></stringProp>
             <stringProp name="variableNames"></stringProp>
             <stringProp name="delimiter">,</stringProp>

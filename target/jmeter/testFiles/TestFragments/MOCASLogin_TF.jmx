@@ -338,7 +338,7 @@
           </ConstantTimer>
           <hashTree/>
           <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="false">
-            <stringProp name="filename">${__P(includecontroller.prefix)}/TestData/${__P(env_name)}/${key}/MOCASLogin.csv</stringProp>
+            <stringProp name="filename">${__P(includecontroller.prefix)}/TestFragments/TestData/${__P(env_name)}/${key}/MOCASLogin.csv</stringProp>
             <stringProp name="fileEncoding"></stringProp>
             <stringProp name="variableNames">usergroup,username,password,continent,continent1,lkc,loc</stringProp>
             <stringProp name="delimiter">,</stringProp>

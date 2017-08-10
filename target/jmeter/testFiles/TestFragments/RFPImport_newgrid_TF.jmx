@@ -2658,7 +2658,7 @@
               <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
                 <collectionProp name="HTTPFileArgs.files">
                   <elementProp name="${__P(includecontroller.prefix)}/TestData/${__P(env_name)}/${key}/ImportRFP_${file}.txt" elementType="HTTPFileArg">
-                    <stringProp name="File.path">${__P(includecontroller.prefix)}/TestData/${__P(env_name)}/${key}/ImportRFP_${file}.txt</stringProp>
+                    <stringProp name="File.path">${__P(includecontroller.prefix)}/TestFragments/TestData/${__P(env_name)}/${key}/ImportRFP_${file}.txt</stringProp>
                     <stringProp name="File.paramname">upload</stringProp>
                     <stringProp name="File.mimetype">text/plain</stringProp>
                   </elementProp>
