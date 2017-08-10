@@ -91,7 +91,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="server" elementType="Argument">
             <stringProp name="Argument.name">server</stringProp>
-            <stringProp name="Argument.value">${__P(env_name)}-prisma-ny.mediaocean.com</stringProp>
+            <stringProp name="Argument.value">${server}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="protocol" elementType="Argument">
@@ -131,7 +131,7 @@
           </elementProp>
           <elementProp name="MOVIN_JSON" elementType="Argument">
             <stringProp name="Argument.name">MOVIN_JSON</stringProp>
-            <stringProp name="Argument.value">${__FileToString(${__P(includecontroller.prefix)}/TestData/${__P(env_name)}/${__P(key_value)}/movin.json,UTF-8)})}</stringProp>
+            <stringProp name="Argument.value">${__FileToString(${__P(includecontroller.prefix)}/TestFragments/TestData/${__P(env_name)}/${__P(key_value)}/movin.json,UTF-8)})}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="grid" elementType="Argument">
@@ -279,7 +279,7 @@
           <collectionProp name="Arguments.arguments">
             <elementProp name="casshib" elementType="Argument">
               <stringProp name="Argument.name">casshib</stringProp>
-              <stringProp name="Argument.value">qa1-casshib-ny.mediaocean.com</stringProp>
+              <stringProp name="Argument.value">prsmpdt-casshib-ny.mediaocean.com</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
           </collectionProp>
@@ -296,15 +296,15 @@
         </CacheManager>
         <hashTree/>
         <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Include Controller" enabled="true">
-          <stringProp name="IncludeController.includepath">/TestFragments/MOCASLogin_TF.jmx</stringProp>
+          <stringProp name="IncludeController.includepath">/MOCASLogin_TF.jmx</stringProp>
         </IncludeController>
         <hashTree/>
         <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Include Controller" enabled="true">
-          <stringProp name="IncludeController.includepath">/TestFragments/CampaignHomepage_TF.jmx</stringProp>
+          <stringProp name="IncludeController.includepath">/CampaignHomepage_TF.jmx</stringProp>
         </IncludeController>
         <hashTree/>
         <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Add Campaign Include Controller" enabled="true">
-          <stringProp name="IncludeController.includepath">/TestFragments/AddCampaign_TF.jmx</stringProp>
+          <stringProp name="IncludeController.includepath">/AddCampaign_TF.jmx</stringProp>
         </IncludeController>
         <hashTree/>
         <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller Old Grid" enabled="true">
@@ -313,15 +313,15 @@
         </IfController>
         <hashTree>
           <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="RFP Import Include Controller" enabled="true">
-            <stringProp name="IncludeController.includepath">/TestFragments/RFPImport_TF.jmx</stringProp>
+            <stringProp name="IncludeController.includepath">/RFPImport_TF.jmx</stringProp>
           </IncludeController>
           <hashTree/>
           <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Move in Include Controller" enabled="true">
-            <stringProp name="IncludeController.includepath">/TestFragments/Movein_TF.jmx</stringProp>
+            <stringProp name="IncludeController.includepath">/Movein_TF.jmx</stringProp>
           </IncludeController>
           <hashTree/>
           <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="Moveout Include Controller" enabled="true">
-            <stringProp name="IncludeController.includepath">/TestFragments/MoveOut_TF.jmx</stringProp>
+            <stringProp name="IncludeController.includepath">/MoveOut_TF.jmx</stringProp>
           </IncludeController>
           <hashTree/>
         </hashTree>
@@ -331,7 +331,7 @@
         </IfController>
         <hashTree>
           <IncludeController guiclass="IncludeControllerGui" testclass="IncludeController" testname="MoveIn And MoveOut New Grid" enabled="true">
-            <stringProp name="IncludeController.includepath">/TestFragments/MoveInMoveOut_TF.jmx</stringProp>
+            <stringProp name="IncludeController.includepath">/MoveInMoveOut_TF.jmx</stringProp>
           </IncludeController>
           <hashTree/>
         </hashTree>
