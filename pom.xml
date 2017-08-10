@@ -8,7 +8,7 @@
 	<name>maven-jmeter-demo</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		<project.basedir>C:\Users\qaadmin\.jenkins\Performance</project.basedir>
+		<project.basedir>${workspace}</project.basedir>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
@@ -41,7 +41,7 @@
 
 
 					<propertiesJMeter>
-						<includecontroller.prefix>${project.basedir}\target\jmeter\testFiles\TestFragments</includecontroller.prefix>
+						<includecontroller.prefix>${project.basedir}\target\jmeter\testFiles\</includecontroller.prefix>
 					</propertiesJMeter>
 				</configuration>
 			</plugin>
