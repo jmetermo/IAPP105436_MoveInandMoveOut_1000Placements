@@ -141,7 +141,7 @@
           </elementProp>
           <elementProp name="idp" elementType="Argument">
             <stringProp name="Argument.name">idp</stringProp>
-            <stringProp name="Argument.value">devci-idp-ny.mediaocean.com</stringProp>
+            <stringProp name="Argument.value">${__P(idp)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
