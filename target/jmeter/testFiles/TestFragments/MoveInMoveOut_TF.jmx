@@ -1,0 +1,1281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.8" jmeter="2.13 r1665067">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Test Fragment" enabled="true"/>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="10 /campaign-service/secure/campaign/${cmpid}/placement/costCalculation" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;campaignId&quot;:&quot;${cmpid}&quot;,&quot;placementId&quot;:&quot;-1&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;costMethod&quot;:&quot;CPM&quot;,&quot;rate&quot;:&quot;10000&quot;,&quot;units&quot;:&quot;10000&quot;,&quot;plannedCost&quot;:&quot;0&quot;,&quot;fieldToCalc&quot;:&quot;plannedCost&quot;,&quot;unitType&quot;:&quot;Impressions&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${server}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/campaign-service/secure/campaign/${cmpid}/placement/costCalculation</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=CP5N26N&amp;route=online</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="X-Requested-With" elementType="Header">
+                <stringProp name="Header.name">X-Requested-With</stringProp>
+                <stringProp name="Header.value">XMLHttpRequest</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="DNT" elementType="Header">
+                <stringProp name="Header.name">DNT</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="11 /campaign-service/secure/campaign/${cmpid}/placement/flighting" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;distribution&quot;:&quot;Weighted&quot;,&quot;autoCalcField&quot;:&quot;plannedCost&quot;,&quot;flightStart&quot;:&quot;2015-01-01&quot;,&quot;flightEnd&quot;:&quot;2015-12-31&quot;,&quot;flighting&quot;:[{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2015-01-31&quot;,&quot;key&quot;:&quot;2015-01&quot;,&quot;name&quot;:&quot;Jan15&quot;,&quot;payableRate&quot;:&quot;0.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;0.00&quot;,&quot;plannedCostAdjusted&quot;:&quot;0.00&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;0&quot;,&quot;plannedCostNoDecimals&quot;:&quot;0&quot;,&quot;plannedPercentage&quot;:&quot;0.000000&quot;,&quot;startDate&quot;:&quot;2015-01-01&quot;,&quot;unitAmount&quot;:&quot;0&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2015-02-28&quot;,&quot;key&quot;:&quot;2015-02&quot;,&quot;name&quot;:&quot;Feb15&quot;,&quot;payableRate&quot;:&quot;0.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;0.00&quot;,&quot;plannedCostAdjusted&quot;:&quot;0.00&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;0&quot;,&quot;plannedCostNoDecimals&quot;:&quot;0&quot;,&quot;plannedPercentage&quot;:&quot;0.000000&quot;,&quot;startDate&quot;:&quot;2015-02-01&quot;,&quot;unitAmount&quot;:&quot;0&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2015-03-31&quot;,&quot;key&quot;:&quot;2015-03&quot;,&quot;name&quot;:&quot;Mar15&quot;,&quot;payableRate&quot;:&quot;0.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;0.00&quot;,&quot;plannedCostAdjusted&quot;:&quot;0.00&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;0&quot;,&quot;plannedCostNoDecimals&quot;:&quot;0&quot;,&quot;plannedPercentage&quot;:&quot;0.000000&quot;,&quot;startDate&quot;:&quot;2015-03-01&quot;,&quot;unitAmount&quot;:&quot;0&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2015-04-30&quot;,&quot;key&quot;:&quot;2015-04&quot;,&quot;name&quot;:&quot;Apr15&quot;,&quot;payableRate&quot;:&quot;0.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;0.00&quot;,&quot;plannedCostAdjusted&quot;:&quot;0.00&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;0&quot;,&quot;plannedCostNoDecimals&quot;:&quot;0&quot;,&quot;plannedPercentage&quot;:&quot;0.000000&quot;,&quot;startDate&quot;:&quot;2015-04-01&quot;,&quot;unitAmount&quot;:&quot;0&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2015-05-31&quot;,&quot;key&quot;:&quot;2015-05&quot;,&quot;name&quot;:&quot;May15&quot;,&quot;payableRate&quot;:&quot;0.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;0.00&quot;,&quot;plannedCostAdjusted&quot;:&quot;0.00&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;0&quot;,&quot;plannedCostNoDecimals&quot;:&quot;0&quot;,&quot;plannedPercentage&quot;:&quot;0.000000&quot;,&quot;startDate&quot;:&quot;2015-05-01&quot;,&quot;unitAmount&quot;:&quot;0&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2015-06-30&quot;,&quot;key&quot;:&quot;2015-06&quot;,&quot;name&quot;:&quot;Jun15&quot;,&quot;payableRate&quot;:&quot;0.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;0.00&quot;,&quot;plannedCostAdjusted&quot;:&quot;0.00&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;0&quot;,&quot;plannedCostNoDecimals&quot;:&quot;0&quot;,&quot;plannedPercentage&quot;:&quot;0.000000&quot;,&quot;startDate&quot;:&quot;2015-06-01&quot;,&quot;unitAmount&quot;:&quot;0&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2015-07-31&quot;,&quot;key&quot;:&quot;2015-07&quot;,&quot;name&quot;:&quot;Jul15&quot;,&quot;payableRate&quot;:&quot;0.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;0.00&quot;,&quot;plannedCostAdjusted&quot;:&quot;0.00&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;0&quot;,&quot;plannedCostNoDecimals&quot;:&quot;0&quot;,&quot;plannedPercentage&quot;:&quot;0.000000&quot;,&quot;startDate&quot;:&quot;2015-07-01&quot;,&quot;unitAmount&quot;:&quot;0&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2015-08-31&quot;,&quot;key&quot;:&quot;2015-08&quot;,&quot;name&quot;:&quot;Aug15&quot;,&quot;payableRate&quot;:&quot;0.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;0.00&quot;,&quot;plannedCostAdjusted&quot;:&quot;0.00&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;0&quot;,&quot;plannedCostNoDecimals&quot;:&quot;0&quot;,&quot;plannedPercentage&quot;:&quot;0.000000&quot;,&quot;startDate&quot;:&quot;2015-08-01&quot;,&quot;unitAmount&quot;:&quot;0&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2015-09-30&quot;,&quot;key&quot;:&quot;2015-09&quot;,&quot;name&quot;:&quot;Sep15&quot;,&quot;payableRate&quot;:&quot;0.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;0.00&quot;,&quot;plannedCostAdjusted&quot;:&quot;0.00&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;0&quot;,&quot;plannedCostNoDecimals&quot;:&quot;0&quot;,&quot;plannedPercentage&quot;:&quot;0.000000&quot;,&quot;startDate&quot;:&quot;2015-09-01&quot;,&quot;unitAmount&quot;:&quot;0&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2015-10-31&quot;,&quot;key&quot;:&quot;2015-10&quot;,&quot;name&quot;:&quot;Oct15&quot;,&quot;payableRate&quot;:&quot;0.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;0.00&quot;,&quot;plannedCostAdjusted&quot;:&quot;0.00&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;0&quot;,&quot;plannedCostNoDecimals&quot;:&quot;0&quot;,&quot;plannedPercentage&quot;:&quot;0.000000&quot;,&quot;startDate&quot;:&quot;2015-10-01&quot;,&quot;unitAmount&quot;:&quot;0&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2015-11-30&quot;,&quot;key&quot;:&quot;2015-11&quot;,&quot;name&quot;:&quot;Nov15&quot;,&quot;payableRate&quot;:&quot;0.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;0.00&quot;,&quot;plannedCostAdjusted&quot;:&quot;0.00&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;0&quot;,&quot;plannedCostNoDecimals&quot;:&quot;0&quot;,&quot;plannedPercentage&quot;:&quot;0.000000&quot;,&quot;startDate&quot;:&quot;2015-11-01&quot;,&quot;unitAmount&quot;:&quot;0&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2015-12-31&quot;,&quot;key&quot;:&quot;2015-12&quot;,&quot;name&quot;:&quot;Dec15&quot;,&quot;payableRate&quot;:&quot;0.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;0.00&quot;,&quot;plannedCostAdjusted&quot;:&quot;0.00&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;0&quot;,&quot;plannedCostNoDecimals&quot;:&quot;0&quot;,&quot;plannedPercentage&quot;:&quot;0.000000&quot;,&quot;startDate&quot;:&quot;2015-12-01&quot;,&quot;unitAmount&quot;:&quot;0&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false}],&quot;placementCost&quot;:{&quot;campaignId&quot;:&quot;${cmpid}&quot;,&quot;placementId&quot;:&quot;-1&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;fieldToCalc&quot;:&quot;plannedCost&quot;,&quot;costMethod&quot;:&quot;CPM&quot;,&quot;unitType&quot;:&quot;Impressions&quot;,&quot;rate&quot;:&quot;10000.0000&quot;,&quot;units&quot;:&quot;10000&quot;,&quot;plannedCost&quot;:&quot;100000.00&quot;}}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${server}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/campaign-service/secure/campaign/${cmpid}/placement/flighting</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=CP5N26N&amp;route=online</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="X-Requested-With" elementType="Header">
+                <stringProp name="Header.name">X-Requested-With</stringProp>
+                <stringProp name="Header.value">XMLHttpRequest</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="DNT" elementType="Header">
+                <stringProp name="Header.name">DNT</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="12 /campaign-service/secure/campaign/${cmpid}/placement/newGrid/package" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;campaignId&quot;:&quot;${cmpid}&quot;,&quot;packageType&quot;:&quot;Package&quot;,&quot;thirdPartyAdserver&quot;:true,&quot;thirdPartyAdserverInstanceDesc&quot;:&quot;DCM for SJ&quot;,&quot;flighting&quot;:[{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2017-01-31&quot;,&quot;key&quot;:&quot;2017-01&quot;,&quot;name&quot;:&quot;Jan17&quot;,&quot;payableRate&quot;:&quot;1000.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;83.37&quot;,&quot;plannedCostAdjusted&quot;:&quot;83.37&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;83&quot;,&quot;plannedCostNoDecimals&quot;:&quot;83&quot;,&quot;plannedPercentage&quot;:&quot;8.300000&quot;,&quot;startDate&quot;:&quot;2017-01-01&quot;,&quot;unitAmount&quot;:&quot;83&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false,&quot;actualized&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2017-02-28&quot;,&quot;key&quot;:&quot;2017-02&quot;,&quot;name&quot;:&quot;Feb17&quot;,&quot;payableRate&quot;:&quot;1000.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;83.33&quot;,&quot;plannedCostAdjusted&quot;:&quot;83.33&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;83&quot;,&quot;plannedCostNoDecimals&quot;:&quot;83&quot;,&quot;plannedPercentage&quot;:&quot;8.300000&quot;,&quot;startDate&quot;:&quot;2017-02-01&quot;,&quot;unitAmount&quot;:&quot;83&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false,&quot;actualized&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2017-03-31&quot;,&quot;key&quot;:&quot;2017-03&quot;,&quot;name&quot;:&quot;Mar17&quot;,&quot;payableRate&quot;:&quot;1000.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;83.33&quot;,&quot;plannedCostAdjusted&quot;:&quot;83.33&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;83&quot;,&quot;plannedCostNoDecimals&quot;:&quot;83&quot;,&quot;plannedPercentage&quot;:&quot;8.300000&quot;,&quot;startDate&quot;:&quot;2017-03-01&quot;,&quot;unitAmount&quot;:&quot;83&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false,&quot;actualized&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2017-04-30&quot;,&quot;key&quot;:&quot;2017-04&quot;,&quot;name&quot;:&quot;Apr17&quot;,&quot;payableRate&quot;:&quot;1000.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;83.33&quot;,&quot;plannedCostAdjusted&quot;:&quot;83.33&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;83&quot;,&quot;plannedCostNoDecimals&quot;:&quot;83&quot;,&quot;plannedPercentage&quot;:&quot;8.300000&quot;,&quot;startDate&quot;:&quot;2017-04-01&quot;,&quot;unitAmount&quot;:&quot;83&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false,&quot;actualized&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2017-05-31&quot;,&quot;key&quot;:&quot;2017-05&quot;,&quot;name&quot;:&quot;May17&quot;,&quot;payableRate&quot;:&quot;1000.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;83.33&quot;,&quot;plannedCostAdjusted&quot;:&quot;83.33&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;83&quot;,&quot;plannedCostNoDecimals&quot;:&quot;83&quot;,&quot;plannedPercentage&quot;:&quot;8.300000&quot;,&quot;startDate&quot;:&quot;2017-05-01&quot;,&quot;unitAmount&quot;:&quot;83&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false,&quot;actualized&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2017-06-30&quot;,&quot;key&quot;:&quot;2017-06&quot;,&quot;name&quot;:&quot;Jun17&quot;,&quot;payableRate&quot;:&quot;1000.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;83.33&quot;,&quot;plannedCostAdjusted&quot;:&quot;83.33&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;83&quot;,&quot;plannedCostNoDecimals&quot;:&quot;83&quot;,&quot;plannedPercentage&quot;:&quot;8.300000&quot;,&quot;startDate&quot;:&quot;2017-06-01&quot;,&quot;unitAmount&quot;:&quot;83&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false,&quot;actualized&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2017-07-31&quot;,&quot;key&quot;:&quot;2017-07&quot;,&quot;name&quot;:&quot;Jul17&quot;,&quot;payableRate&quot;:&quot;1000.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;83.33&quot;,&quot;plannedCostAdjusted&quot;:&quot;83.33&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;83&quot;,&quot;plannedCostNoDecimals&quot;:&quot;83&quot;,&quot;plannedPercentage&quot;:&quot;8.300000&quot;,&quot;startDate&quot;:&quot;2017-07-01&quot;,&quot;unitAmount&quot;:&quot;83&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false,&quot;actualized&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2017-08-31&quot;,&quot;key&quot;:&quot;2017-08&quot;,&quot;name&quot;:&quot;Aug17&quot;,&quot;payableRate&quot;:&quot;1000.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;83.33&quot;,&quot;plannedCostAdjusted&quot;:&quot;83.33&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;83&quot;,&quot;plannedCostNoDecimals&quot;:&quot;83&quot;,&quot;plannedPercentage&quot;:&quot;8.300000&quot;,&quot;startDate&quot;:&quot;2017-08-01&quot;,&quot;unitAmount&quot;:&quot;83&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false,&quot;actualized&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2017-09-30&quot;,&quot;key&quot;:&quot;2017-09&quot;,&quot;name&quot;:&quot;Sep17&quot;,&quot;payableRate&quot;:&quot;1000.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;83.33&quot;,&quot;plannedCostAdjusted&quot;:&quot;83.33&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;83&quot;,&quot;plannedCostNoDecimals&quot;:&quot;83&quot;,&quot;plannedPercentage&quot;:&quot;8.300000&quot;,&quot;startDate&quot;:&quot;2017-09-01&quot;,&quot;unitAmount&quot;:&quot;83&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false,&quot;actualized&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2017-10-31&quot;,&quot;key&quot;:&quot;2017-10&quot;,&quot;name&quot;:&quot;Oct17&quot;,&quot;payableRate&quot;:&quot;1000.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;83.33&quot;,&quot;plannedCostAdjusted&quot;:&quot;83.33&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;83&quot;,&quot;plannedCostNoDecimals&quot;:&quot;83&quot;,&quot;plannedPercentage&quot;:&quot;8.300000&quot;,&quot;startDate&quot;:&quot;2017-10-01&quot;,&quot;unitAmount&quot;:&quot;83&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false,&quot;actualized&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2017-11-30&quot;,&quot;key&quot;:&quot;2017-11&quot;,&quot;name&quot;:&quot;Nov17&quot;,&quot;payableRate&quot;:&quot;1000.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;83.33&quot;,&quot;plannedCostAdjusted&quot;:&quot;83.33&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;83&quot;,&quot;plannedCostNoDecimals&quot;:&quot;83&quot;,&quot;plannedPercentage&quot;:&quot;8.300000&quot;,&quot;startDate&quot;:&quot;2017-11-01&quot;,&quot;unitAmount&quot;:&quot;83&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false,&quot;actualized&quot;:false},{&quot;placementId&quot;:&quot;-1&quot;,&quot;costAdjustment&quot;:&quot;0.00&quot;,&quot;currencyType&quot;:&quot;USD&quot;,&quot;endDate&quot;:&quot;2017-12-31&quot;,&quot;key&quot;:&quot;2017-12&quot;,&quot;name&quot;:&quot;Dec17&quot;,&quot;payableRate&quot;:&quot;1000.0000&quot;,&quot;payableRateOverridden&quot;:false,&quot;plannedCost&quot;:&quot;83.33&quot;,&quot;plannedCostAdjusted&quot;:&quot;83.33&quot;,&quot;plannedCostAdjustedNoDecimals&quot;:&quot;83&quot;,&quot;plannedCostNoDecimals&quot;:&quot;83&quot;,&quot;plannedPercentage&quot;:&quot;8.700000&quot;,&quot;startDate&quot;:&quot;2017-12-01&quot;,&quot;unitAmount&quot;:&quot;87&quot;,&quot;buyLocked&quot;:false,&quot;invoiceLocked&quot;:false,&quot;actualized&quot;:false}],&quot;adserverInstance&quot;:{&quot;id&quot;:3813,&quot;name&quot;:&quot;DCM for SJ&quot;,&quot;adserverType&quot;:&quot;DCM&quot;,&quot;description&quot;:&quot;DCM for SJ&quot;,&quot;campaignNameLength&quot;:255,&quot;canSelectConversionTags&quot;:true,&quot;canSelectSSL&quot;:true,&quot;adserverId&quot;:4,&quot;providerTypeId&quot;:1,&quot;landingPageRequired&quot;:true,&quot;conversionTagRequired&quot;:false,&quot;capCostRequired&quot;:true,&quot;dfa6&quot;:true,&quot;adserverDisplayName&quot;:&quot;DCM for SJ&quot;,&quot;instanceId&quot;:3813},&quot;capCost&quot;:&quot;Monthly&quot;,&quot;publisherPaid&quot;:false,&quot;providers&quot;:[],&quot;thirdPartyAdserverInstanceId&quot;:3813,&quot;placementActionTags&quot;:[],&quot;placementName&quot;:&quot;(System generated)&quot;,&quot;buyDetail&quot;:{&quot;id&quot;:${buyDetails},&quot;version&quot;:0,&quot;agencyMedia&quot;:{&quot;id&quot;:1,&quot;mediaCode&quot;:&quot;I&quot;,&quot;mediaName&quot;:&quot;Interactive&quot;,&quot;agencyId&quot;:1,&quot;multiCurrencyEnabled&quot;:false},&quot;client&quot;:{&quot;id&quot;:0,&quot;clientCode&quot;:&quot;002&quot;,&quot;clientShortName&quot;:&quot;002&quot;,&quot;clientName&quot;:&quot;AUTO-CLIENT-2&quot;,&quot;businessKey&quot;:&quot;USSJI002&quot;,&quot;budgetCurrency&quot;:&quot;USD&quot;,&quot;billingCurrency&quot;:&quot;&quot;,&quot;mediaType&quot;:&quot;I&quot;,&quot;dualCostEnabled&quot;:false},&quot;product&quot;:{&quot;id&quot;:0,&quot;productCode&quot;:&quot;001&quot;,&quot;productShortName&quot;:&quot;001&quot;,&quot;productName&quot;:&quot;AUTO-PD-1&quot;,&quot;businessKey&quot;:&quot;USSJI002001&quot;,&quot;clientBusinessKey&quot;:&quot;&quot;},&quot;estimate&quot;:{&quot;id&quot;:0,&quot;estimateCode&quot;:&quot;007&quot;,&quot;estimateName&quot;:&quot;EST1-JAN1-DEC31-2017 - TEST&quot;,&quot;estimateShortName&quot;:&quot;007&quot;,&quot;businessKey&quot;:&quot;USSJI002001007&quot;,&quot;productBusinessKey&quot;:&quot;USSJI002001&quot;,&quot;clientBusinessKey&quot;:&quot;USSJI002&quot;,&quot;extractKey&quot;:&quot;&quot;,&quot;lastAction&quot;:&quot;&quot;,&quot;estimateStartDate&quot;:&quot;2017-01-01&quot;,&quot;estimateEndDate&quot;:&quot;2017-12-31&quot;},&quot;buyTypeId&quot;:1,&quot;buyType&quot;:&quot;Display&quot;,&quot;activeStartDate&quot;:&quot;2017-01-01&quot;,&quot;activeEndDate&quot;:&quot;2017-12-31&quot;,&quot;assigned&quot;:true,&quot;editable&quot;:false,&quot;isCreateEstimateSelected&quot;:false,&quot;isEstimateCreatedFromPrisma&quot;:false,&quot;clientEstimateUDFs&quot;:[],&quot;displayValue&quot;:&quot;I | 002 | 001 | 007&quot;},&quot;placementType&quot;:&quot;Display&quot;,&quot;buyCategory&quot;:&quot;Standard&quot;,&quot;site&quot;:&quot;Performance&quot;,&quot;supplier&quot;:{&quot;id&quot;:452,&quot;supplierName&quot;:&quot;GOOGLE.COM&quot;,&quot;businessKey&quot;:&quot;USSJI09000023&quot;,&quot;supplierCode&quot;:&quot;09000023&quot;,&quot;mediaCode&quot;:&quot;I&quot;,&quot;fromDate&quot;:&quot;&quot;,&quot;endDate&quot;:&quot;&quot;,&quot;autoZone&quot;:0,&quot;supplierDiscounts&quot;:[],&quot;mediaName&quot;:&quot;Interactive&quot;,&quot;supplierBusinessKey&quot;:&quot;USSJI09000023&quot;,&quot;vendorName&quot;:&quot;Test Vendor - Canada&quot;,&quot;globalVendorId&quot;:&quot;35-2-FMV0-4&quot;,&quot;partnerPreferredStatus&quot;:&quot;PREFERRED&quot;,&quot;disabled&quot;:false,&quot;preferred&quot;:true},&quot;flightStart&quot;:&quot;2017-01-01&quot;,&quot;flightEnd&quot;:&quot;2017-12-31&quot;,&quot;costMethod&quot;:&quot;CPM&quot;,&quot;unitType&quot;:&quot;Impressions&quot;,&quot;rate&quot;:1000,&quot;rateValue&quot;:1000,&quot;unitAmount&quot;:1000,&quot;units&quot;:1000,&quot;distribution&quot;:&quot;Even&quot;,&quot;commissionable&quot;:true,&quot;addMarkup&quot;:false,&quot;billableRate&quot;:&quot;0&quot;,&quot;costToClient&quot;:&quot;0&quot;,&quot;markupMarginValue&quot;:0,&quot;markupMarginPercent&quot;:0,&quot;plannedCost&quot;:1000,&quot;plannedCostValue&quot;:1000}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${server}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/campaign-service/secure/campaign/${cmpid}/placement/newGrid/package</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=CP5N26N&amp;route=online</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="X-Requested-With" elementType="Header">
+                <stringProp name="Header.name">X-Requested-With</stringProp>
+                <stringProp name="Header.value">XMLHttpRequest</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="DNT" elementType="Header">
+                <stringProp name="Header.name">DNT</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor guiclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.gui.JSONPathExtractorGui" testclass="com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor" testname="jp@gc - JSON Path Extractor" enabled="false">
+            <stringProp name="VAR">pkgId</stringProp>
+            <stringProp name="JSONPATH">$.id</stringProp>
+            <stringProp name="DEFAULT">Package Id Is not Found</stringProp>
+            <stringProp name="VARIABLE"></stringProp>
+            <stringProp name="SUBJECT">BODY</stringProp>
+          </com.atlantbh.jmeter.plugins.jsonutils.jsonpathextractor.JSONPathExtractor>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1406005422">&quot;status&quot;:&quot;SUCCESSFUL&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">pkgId</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;id&quot;:(\d+)</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">Package Id is not Found</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="13 /campaign-service/secure/campaign/${cmpid}/placement/placementId/${pkgId}" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${server}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/campaign-service/secure/campaign/${cmpid}/placement/placementId/${pkgId}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=CP5N26N&amp;route=online</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="X-Requested-With" elementType="Header">
+                <stringProp name="Header.name">X-Requested-With</stringProp>
+                <stringProp name="Header.value">XMLHttpRequest</stringProp>
+              </elementProp>
+              <elementProp name="DNT" elementType="Header">
+                <stringProp name="Header.name">DNT</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="14 /agency-service/secure/supplier" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="mediaCode" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">mediaCode</stringProp>
+                <stringProp name="Argument.value">I,S,L</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="searchString" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">searchString</stringProp>
+                <stringProp name="Argument.value">Performance</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">qa1-prisma-ny.mediaocean.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/agency-service/secure/supplier</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=CP5N26N&amp;route=online</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="X-Requested-With" elementType="Header">
+                <stringProp name="Header.name">X-Requested-With</stringProp>
+                <stringProp name="Header.value">XMLHttpRequest</stringProp>
+              </elementProp>
+              <elementProp name="DNT" elementType="Header">
+                <stringProp name="Header.name">DNT</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="15 /campaign-service/secure/campaign/${cmpid}/placement/newGrid/child" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;packageType&quot;:&quot;Child&quot;,&quot;packageId&quot;:&quot;${pkgId}&quot;,&quot;campaignId&quot;:&quot;${cmpid}&quot;,&quot;flighting&quot;:[],&quot;billableFlighting&quot;:[],&quot;flightStart&quot;:&quot;2017-01-01&quot;,&quot;flightEnd&quot;:&quot;2017-12-31&quot;,&quot;customColumns&quot;:[],&quot;adserverInstance&quot;:{&quot;id&quot;:3813,&quot;name&quot;:&quot;DCM for SJ&quot;,&quot;adserverType&quot;:&quot;DCM&quot;,&quot;campaignNameLength&quot;:0,&quot;canSelectConversionTags&quot;:false,&quot;canSelectSSL&quot;:false,&quot;adserverId&quot;:4,&quot;providerTypeId&quot;:1,&quot;dfa6&quot;:true,&quot;landingPageRequired&quot;:false,&quot;conversionTagRequired&quot;:false,&quot;capCostRequired&quot;:false,&quot;adserverDisplayName&quot;:&quot;DCM for SJ&quot;},&quot;thirdPartyAdserver&quot;:true,&quot;servedBy&quot;:&quot;3rd party&quot;,&quot;trackingDescription&quot;:&quot;Other&quot;,&quot;placementName&quot;:&quot;(System generated)&quot;,&quot;buyDetail&quot;:{&quot;id&quot;:${buyDetails},&quot;version&quot;:0,&quot;agencyMedia&quot;:{&quot;id&quot;:1,&quot;mediaCode&quot;:&quot;I&quot;,&quot;mediaName&quot;:&quot;Interactive&quot;,&quot;agencyId&quot;:1,&quot;multiCurrencyEnabled&quot;:false},&quot;client&quot;:{&quot;id&quot;:0,&quot;clientCode&quot;:&quot;002&quot;,&quot;clientShortName&quot;:&quot;002&quot;,&quot;clientName&quot;:&quot;AUTO-CLIENT-2&quot;,&quot;businessKey&quot;:&quot;USSJI002&quot;,&quot;budgetCurrency&quot;:&quot;USD&quot;,&quot;billingCurrency&quot;:&quot;&quot;,&quot;mediaType&quot;:&quot;I&quot;,&quot;dualCostEnabled&quot;:false},&quot;product&quot;:{&quot;id&quot;:0,&quot;productCode&quot;:&quot;001&quot;,&quot;productShortName&quot;:&quot;001&quot;,&quot;productName&quot;:&quot;AUTO-PD-1&quot;,&quot;businessKey&quot;:&quot;USSJI002001&quot;,&quot;clientBusinessKey&quot;:&quot;&quot;},&quot;estimate&quot;:{&quot;id&quot;:0,&quot;estimateCode&quot;:&quot;007&quot;,&quot;estimateName&quot;:&quot;EST1-JAN1-DEC31-2017 - TEST&quot;,&quot;estimateShortName&quot;:&quot;007&quot;,&quot;businessKey&quot;:&quot;USSJI002001007&quot;,&quot;productBusinessKey&quot;:&quot;USSJI002001&quot;,&quot;clientBusinessKey&quot;:&quot;USSJI002&quot;,&quot;extractKey&quot;:&quot;&quot;,&quot;lastAction&quot;:&quot;&quot;,&quot;estimateStartDate&quot;:&quot;2017-01-01&quot;,&quot;estimateEndDate&quot;:&quot;2017-12-31&quot;},&quot;buyTypeId&quot;:1,&quot;buyType&quot;:&quot;Display&quot;,&quot;activeStartDate&quot;:&quot;2017-01-01&quot;,&quot;activeEndDate&quot;:&quot;2017-12-31&quot;,&quot;assigned&quot;:true,&quot;editable&quot;:false,&quot;isCreateEstimateSelected&quot;:false,&quot;isEstimateCreatedFromPrisma&quot;:false,&quot;clientEstimateUDFs&quot;:[],&quot;displayValue&quot;:&quot;I | 002 | 001 | 007&quot;},&quot;placementType&quot;:&quot;Display&quot;,&quot;buyCategory&quot;:&quot;Standard&quot;,&quot;dimensionsPosition&quot;:&quot;Button 2&quot;,&quot;dimensions&quot;:&quot;120x60&quot;,&quot;site&quot;:&quot;Performance&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${server}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/campaign-service/secure/campaign/${cmpid}/placement/newGrid/child</stringProp>
+          <stringProp name="HTTPSampler.method">PUT</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=CP5N26N&amp;route=online</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="X-Requested-With" elementType="Header">
+                <stringProp name="Header.name">X-Requested-With</stringProp>
+                <stringProp name="Header.value">XMLHttpRequest</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="DNT" elementType="Header">
+                <stringProp name="Header.name">DNT</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-1406005422">&quot;status&quot;:&quot;SUCCESSFUL&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="25 /campaign-service/secure/placementTempStorage" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${server}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/campaign-service/secure/placementTempStorage</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=CP5N26N&amp;route=online</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="X-Requested-With" elementType="Header">
+                <stringProp name="Header.name">X-Requested-With</stringProp>
+                <stringProp name="Header.value">XMLHttpRequest</stringProp>
+              </elementProp>
+              <elementProp name="DNT" elementType="Header">
+                <stringProp name="Header.name">DNT</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="26 /campaign-service/secure/campaign/${cmpid}/proposalRFP/importrfp?encoding=ISO_8859-1" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="${cmpid}" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">${cmpid}</stringProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${server}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/campaign-service/secure/campaign/${cmpid}/proposalRFP/importrfp?encoding=ISO_8859-1</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">true</boolProp>
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="${__P(includecontroller.prefix)}/TestData/${__P(env_name)}/${key}/ImportRFP_New_${file}.txt" elementType="HTTPFileArg">
+                <stringProp name="File.path">${__P(includecontroller.prefix)}/TestData/${__P(env_name)}/${key}/ImportRFP_New_${file}.txt</stringProp>
+                <stringProp name="File.paramname">upload</stringProp>
+                <stringProp name="File.mimetype">text/plain</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <boolProp name="HTTPSampler.monitor">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=CP5N26N&amp;route=online</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="X-Requested-With" elementType="Header">
+                <stringProp name="Header.name">X-Requested-With</stringProp>
+                <stringProp name="Header.value">XMLHttpRequest</stringProp>
+              </elementProp>
+              <elementProp name="DNT" elementType="Header">
+                <stringProp name="Header.name">DNT</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="-2001872">status&quot;:&quot;SUCCESSFUL&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">16</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="MoveIn" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="28 /campaign-service/secure/campaign/${cmpid}/moving/packagelist" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;selection&quot;:{&quot;all&quot;:false,&quot;nodes&quot;:[{&quot;type&quot;:&quot;Group&quot;,&quot;op&quot;:&quot;eq&quot;,&quot;fields&quot;:[{&quot;id&quot;:&quot;placementType&quot;,&quot;value&quot;:&quot;1&quot;,&quot;selected&quot;:false}],&quot;nodes&quot;:[{&quot;type&quot;:&quot;Group&quot;,&quot;op&quot;:&quot;eq&quot;,&quot;fields&quot;:[{&quot;id&quot;:&quot;supplierSite&quot;,&quot;value&quot;:&quot;USSJI09000023|GOOGLE.COM&quot;,&quot;selected&quot;:true}]}]}],&quot;filter&quot;:{&quot;op&quot;:&quot;and&quot;,&quot;filters&quot;:[{&quot;op&quot;:&quot;and&quot;,&quot;fields&quot;:[{&quot;op&quot;:&quot;eq&quot;,&quot;id&quot;:&quot;onMediaPlan&quot;,&quot;value&quot;:&quot;true&quot;}],&quot;alwaysApplied&quot;:true}]},&quot;group&quot;:[{&quot;id&quot;:&quot;placementType&quot;,&quot;dir&quot;:&quot;asc&quot;},{&quot;id&quot;:&quot;supplierSite&quot;,&quot;dir&quot;:&quot;asc&quot;}],&quot;entity&quot;:&quot;Placement&quot;},&quot;mode&quot;:&quot;Package&quot;,&quot;gridType&quot;:&quot;NewGrid&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/campaign-service/secure/campaign/${cmpid}/moving/packagelist</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=CP5N26N&amp;route=online</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="DNT" elementType="Header">
+                  <stringProp name="Header.name">DNT</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="29 /campaign-service/secure/campaign/${cmpid}/moving/movein" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;selection&quot;:{&quot;all&quot;:true,&quot;nodes&quot;:[],&quot;filter&quot;:{&quot;op&quot;:&quot;and&quot;,&quot;filters&quot;:[{&quot;op&quot;:&quot;and&quot;,&quot;fields&quot;:[{&quot;op&quot;:&quot;eq&quot;,&quot;id&quot;:&quot;onMediaPlan&quot;,&quot;value&quot;:&quot;true&quot;}],&quot;alwaysApplied&quot;:true}]},&quot;group&quot;:[{&quot;id&quot;:&quot;placementType&quot;,&quot;dir&quot;:&quot;asc&quot;},{&quot;id&quot;:&quot;supplierSite&quot;,&quot;dir&quot;:&quot;asc&quot;}],&quot;entity&quot;:&quot;Placement&quot;},&quot;mode&quot;:&quot;Package&quot;,&quot;gridType&quot;:&quot;NewGrid&quot;,&quot;actionType&quot;:&quot;validate&quot;,&quot;packageId&quot;:&quot;${pkgId}&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/campaign-service/secure/campaign/${cmpid}/moving/movein</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=${pubid}&amp;route=online</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="DNT" elementType="Header">
+                  <stringProp name="Header.name">DNT</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">5000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-2001872">status&quot;:&quot;SUCCESSFUL&quot;</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="30 /campaign-service/secure/campaign/${cmpid}/moving/movein" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;selection&quot;:{&quot;all&quot;:true,&quot;nodes&quot;:[],&quot;filter&quot;:{&quot;op&quot;:&quot;and&quot;,&quot;filters&quot;:[{&quot;op&quot;:&quot;and&quot;,&quot;fields&quot;:[{&quot;op&quot;:&quot;eq&quot;,&quot;id&quot;:&quot;onMediaPlan&quot;,&quot;value&quot;:&quot;true&quot;}],&quot;alwaysApplied&quot;:true}]},&quot;group&quot;:[{&quot;id&quot;:&quot;placementType&quot;,&quot;dir&quot;:&quot;asc&quot;},{&quot;id&quot;:&quot;supplierSite&quot;,&quot;dir&quot;:&quot;asc&quot;}],&quot;entity&quot;:&quot;Placement&quot;},&quot;mode&quot;:&quot;Package&quot;,&quot;gridType&quot;:&quot;NewGrid&quot;,&quot;actionType&quot;:&quot;save&quot;,&quot;packageId&quot;:&quot;${pkgId}&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/campaign-service/secure/campaign/${cmpid}/moving/movein</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=${pubid}&amp;route=online</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="DNT" elementType="Header">
+                  <stringProp name="Header.name">DNT</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
+              <stringProp name="ConstantTimer.delay">5000</stringProp>
+            </ConstantTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="31 /agency-service/secure/usersettings/prisma.prsm-cm-buy.online.-13.${__lowercase(${pubid},)}" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/agency-service/secure/usersettings/prisma.prsm-cm-buy.online.-13.${__lowercase(${pubid},)}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=CP5N26N&amp;route=online</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="DNT" elementType="Header">
+                  <stringProp name="Header.name">DNT</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="32 /agency-service/secure/usersettings/hot.prsm-cm-buy.default%20layout.${__lowercase(${pubid},)}" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/agency-service/secure/usersettings/hot.prsm-cm-buy.default%20layout.${__lowercase(${pubid},)}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=CP5N26N&amp;route=online</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="DNT" elementType="Header">
+                  <stringProp name="Header.name">DNT</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="33 /campaign-service/secure/layout/-13/campaign/${pubid}" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/campaign-service/secure/layout/-13/campaign/${pubid}</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=CP5N26N&amp;route=online</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="DNT" elementType="Header">
+                  <stringProp name="Header.name">DNT</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="34 /campaign-service/secure/campaign/${cmpid}/queryservice/mediaplan/hybrid" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;type&quot;:&quot;detailedHybrid&quot;,&quot;filter&quot;:{&quot;op&quot;:&quot;and&quot;,&quot;filters&quot;:[{&quot;op&quot;:&quot;and&quot;,&quot;fields&quot;:[{&quot;op&quot;:&quot;eq&quot;,&quot;id&quot;:&quot;onMediaPlan&quot;,&quot;value&quot;:&quot;true&quot;}],&quot;alwaysApplied&quot;:true}]},&quot;entity&quot;:&quot;Placement&quot;,&quot;sort&quot;:[{&quot;id&quot;:&quot;placementName&quot;,&quot;dir&quot;:&quot;asc&quot;}],&quot;fields&quot;:[{&quot;id&quot;:&quot;placementType&quot;},{&quot;id&quot;:&quot;supplierSite&quot;},{&quot;id&quot;:&quot;placementName&quot;},{&quot;id&quot;:&quot;positionDimensionCombo&quot;},{&quot;id&quot;:&quot;flightStart&quot;},{&quot;id&quot;:&quot;flightEnd&quot;},{&quot;id&quot;:&quot;costMethod&quot;},{&quot;id&quot;:&quot;plannedCost&quot;},{&quot;id&quot;:&quot;rate&quot;},{&quot;id&quot;:&quot;unitAmount&quot;}],&quot;filterByThisfeeOrderId&quot;:null,&quot;start&quot;:0,&quot;end&quot;:0}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">http</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/campaign-service/secure/campaign/${cmpid}/queryservice/mediaplan/hybrid</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=CP5N26N&amp;route=online</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="DNT" elementType="Header">
+                  <stringProp name="Header.name">DNT</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="35 /agency-service/secure/usersettings/hot.prsm-cm-buy.${__lowercase(${pubid},)}.online.lastlayout" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/agency-service/secure/usersettings/hot.prsm-cm-buy.${__lowercase(${pubid},)}.online.lastlayout</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=CP5N26N&amp;route=online</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="DNT" elementType="Header">
+                  <stringProp name="Header.name">DNT</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="36 /campaign-service/secure/layout/layouts/mediaplan/" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="gridType" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">gridType</stringProp>
+                  <stringProp name="Argument.value">newGrid</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/campaign-service/secure/layout/layouts/mediaplan/</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=CP5N26N&amp;route=online</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="DNT" elementType="Header">
+                  <stringProp name="Header.name">DNT</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="MoveOut Controller" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="37 /campaign-service/secure/campaign/${cmpid}/moving/moveout" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;selection&quot;:{&quot;all&quot;:true,&quot;nodes&quot;:[],&quot;filter&quot;:{&quot;op&quot;:&quot;and&quot;,&quot;filters&quot;:[{&quot;op&quot;:&quot;and&quot;,&quot;fields&quot;:[{&quot;op&quot;:&quot;eq&quot;,&quot;id&quot;:&quot;onMediaPlan&quot;,&quot;value&quot;:&quot;true&quot;}],&quot;alwaysApplied&quot;:true}]},&quot;group&quot;:[{&quot;id&quot;:&quot;placementType&quot;,&quot;dir&quot;:&quot;asc&quot;},{&quot;id&quot;:&quot;supplierSite&quot;,&quot;dir&quot;:&quot;asc&quot;}],&quot;entity&quot;:&quot;Placement&quot;},&quot;mode&quot;:&quot;Package&quot;,&quot;actionType&quot;:&quot;validate&quot;,&quot;gridType&quot;:&quot;NewGrid&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/campaign-service/secure/campaign/${cmpid}/moving/moveout</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=${pubid}&amp;route=online</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="DNT" elementType="Header">
+                  <stringProp name="Header.name">DNT</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-2001872">status&quot;:&quot;SUCCESSFUL&quot;</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="38 /campaign-service/secure/campaign/${cmpid}/moving/moveout" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;selection&quot;:{&quot;all&quot;:true,&quot;nodes&quot;:[],&quot;filter&quot;:{&quot;op&quot;:&quot;and&quot;,&quot;filters&quot;:[{&quot;op&quot;:&quot;and&quot;,&quot;fields&quot;:[{&quot;op&quot;:&quot;eq&quot;,&quot;id&quot;:&quot;onMediaPlan&quot;,&quot;value&quot;:&quot;true&quot;}],&quot;alwaysApplied&quot;:true}]},&quot;group&quot;:[{&quot;id&quot;:&quot;placementType&quot;,&quot;dir&quot;:&quot;asc&quot;},{&quot;id&quot;:&quot;supplierSite&quot;,&quot;dir&quot;:&quot;asc&quot;}],&quot;entity&quot;:&quot;Placement&quot;},&quot;mode&quot;:&quot;Package&quot;,&quot;actionType&quot;:&quot;save&quot;,&quot;gridType&quot;:&quot;NewGrid&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${server}</stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/campaign-service/secure/campaign/${cmpid}/moving/moveout</stringProp>
+            <stringProp name="HTTPSampler.method">PUT</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">http://qa1-prisma-ny.mediaocean.com/idesk/prisma-online/index.html?prsm-poc=true&amp;osPspId=prsm-cm-buy&amp;osCmpId=90317&amp;osEndpointUrl=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com&amp;osViewportVersion=1.30.27&amp;osResourceUrl=https%3A%2F%2Fpub-resource-viewport-prsmqa1.dds.net%2F&amp;osLang=22&amp;osVref=http%3A%2F%2Fqa1-prisma-ny.mediaocean.com%2Fviewport-home%2F&amp;os-pid=prsm-cm-buy&amp;os-cid=90317&amp;campaign-id=${pubid}&amp;route=online</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="X-Requested-With" elementType="Header">
+                  <stringProp name="Header.name">X-Requested-With</stringProp>
+                  <stringProp name="Header.value">XMLHttpRequest</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json; charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="DNT" elementType="Header">
+                  <stringProp name="Header.name">DNT</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:43.0) Gecko/20100101 Firefox/43.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/javascript, */*; q=0.01</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+              <collectionProp name="Asserion.test_strings">
+                <stringProp name="-2001872">status&quot;:&quot;SUCCESSFUL&quot;</stringProp>
+              </collectionProp>
+              <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+              <boolProp name="Assertion.assume_success">false</boolProp>
+              <intProp name="Assertion.test_type">16</intProp>
+            </ResponseAssertion>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
